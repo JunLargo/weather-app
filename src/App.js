@@ -49,12 +49,12 @@ const App = () => {
   }
 
   return (
-    <div className="max-w-full mx-auto flex flex-col justify-center items-center mt-8 ml-px">
+    <div className="max-w-full mx-auto flex flex-col justify-center items-center mt-12 ml-px">
       <div>
-      <h1 className="text-center text-white text-5xl ">Welcome to weather app</h1>
+      <h1 className="text-center text-white text-3xl ">Welcome to weather app</h1>
         <input 
           type="text" 
-          className="bg-gray-100 mt-4 rounded-full border focus:outline-none focus:border-gray-200 w-80 px-3 py-3 placeholder:text-xs text-gray-900 text-sm drop-shadow-2xl" 
+          className="bg-gray-100 mt-4 rounded-full border focus:outline-none focus:border-gray-200 w-96 px-3 py-3 placeholder:text-sm text-gray-900 text-sm drop-shadow-2xl" 
           placeholder="Enter your city name here ..."
           onChange={e => setCity(e.target.value)}
           value={city}
