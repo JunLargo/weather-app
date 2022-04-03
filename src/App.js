@@ -54,7 +54,7 @@ const App = () => {
       <h1 className="text-center text-white text-3xl ">Welcome to weather app</h1>
         <input 
           type="text" 
-          className="bg-gray-100 mt-4 touch-none rounded border focus:outline-none focus:border-gray-200 scale-0 w-96 px-3 py-3 placeholder:text-sm text-gray-900 text-sm drop-shadow-2xl" 
+          className="bg-gray-100 mt-4 touch-none rounded border transform-none focus:outline-none focus:border-gray-200 w-96 px-3 py-3 placeholder:text-sm text-gray-900 text-sm drop-shadow-2xl" 
           placeholder="Enter your city name here ..."
           onChange={e => setCity(e.target.value)}
           value={city}
