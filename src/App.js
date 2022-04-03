@@ -17,6 +17,9 @@ const App = () => {
       const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`);
       const data = await res.json('');
 
+      const resForecast = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=minutely&units=metric&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`)
+      const dataForecast = await resForecast.json();
+
       setWeatherData(data)
       setCity('')
 
@@ -24,8 +27,7 @@ const App = () => {
       setWeatherIcon(icon)
 
       //getting forecast data
-      const resForecast = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=minutely&units=metric&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`)
-      const dataForecast = await resForecast.json();
+      
 
       setForecastData(dataForecast);
 
@@ -84,7 +86,7 @@ const App = () => {
                     <p className='font-light text-xs'>{Moment(timeConverter(forecastData.hourly[3].dt)).format('LT')}</p>
                     <div className='flex justify-center'>
                       <p className='text-center text-l font-bold'>{Math.round(forecastData.hourly[3].temp)} 
-                      <span><img className='-nt-2' src={`https://openweathermap.org/img/wn/${forecastData.hourly[9].weather[0].icon}@2x.png`} alt='one' height='30' width='30' /></span></p>
+                      <span><img className='-nt-2' src={`https://openweathermap.org/img/wn/${forecastData.hourly[3].weather[0].icon}@2x.png`} alt='one' height='30' width='30' /></span></p>
                     </div>
                     <p>{forecastData.hourly[3].weather[0].description}</p> 
                   </div>
@@ -113,8 +115,6 @@ const App = () => {
                     <p>{forecastData.hourly[12].weather[0].description}</p>
                   </div>
                 </div>
-                {/* <p className="text-white">{Math.round(forecastData.hourly[3].temp)}</p> */}
-                {/* <p>{forecastData.hourly[0].weather[0].description}</p> */}
             </div>
           </>
         )}
