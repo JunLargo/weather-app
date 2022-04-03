@@ -80,7 +80,7 @@ const App = () => {
               </div>
                 <h4 className='mt-2 text-white text-sm'>Forecast (every 3 hours)</h4>
                 {/* //grid */}
-                <div className="grid gap-1 grid-cols-4 grid-rows-4 text-white text-xs font-thin mt-2">
+                {/* <div className="grid gap-1 grid-cols-4 grid-rows-4 text-white text-xs font-thin mt-2">
                   <div className='text-center border-gray-800 border px-1 py-1'>
                     <p className='font-light text-xs'>{Moment(timeConverter(forecastData.hourly[3].dt)).format('LT')}</p>
                     <div className='flex justify-center'>
@@ -113,7 +113,7 @@ const App = () => {
                     </div>
                     <p>{forecastData.hourly[12].weather[0].description}</p>
                   </div>
-                </div>
+                </div> */}
                 {/* <p className="text-white">{Math.round(forecastData.hourly[3].temp)}</p> */}
                 {/* <p>{forecastData.hourly[0].weather[0].description}</p> */}
             </div>
