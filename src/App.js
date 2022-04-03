@@ -28,7 +28,6 @@ const App = () => {
       const dataForecast = await resForecast.json();
 
       setForecastData(dataForecast);
-      console.log(dataForecast);
 
 
     }
@@ -48,7 +47,7 @@ const App = () => {
   }
 
   return (
-    <div className="max-w-fullß mx-auto flex flex-col justify-center items-center mt-4 ml-px">
+    <div className="max-w-fullß mx-auto flex flex-col justify-center items-center mt-8 ml-px">
       <div>
       <h1 className="text-center text-white ">Welcome to weather app</h1>
         <input 
@@ -62,7 +61,7 @@ const App = () => {
       </div>
       <div>
         {typeof weatherData.main === 'undefined' ? (
-          <div className="text-center mt-3 text-xsm text-gray-200">
+          <div className="text-center mt-5 text-xsm text-gray-200">
             {/* <p className="text-xsm text-gray-200 font-light">{weatherInfo}</p> */}
           </div>
         ) : (
@@ -80,7 +79,7 @@ const App = () => {
               </div>
                 <h4 className='mt-2 text-white text-sm'>Forecast (every 3 hours)</h4>
                 {/* //grid */}
-                {/* <div className="grid gap-1 grid-cols-4 grid-rows-4 text-white text-xs font-thin mt-2">
+                <div className="grid gap-1 grid-cols-4 grid-rows-4 text-white text-xs font-thin mt-2">
                   <div className='text-center border-gray-800 border px-1 py-1'>
                     <p className='font-light text-xs'>{Moment(timeConverter(forecastData.hourly[3].dt)).format('LT')}</p>
                     <div className='flex justify-center'>
@@ -113,7 +112,7 @@ const App = () => {
                     </div>
                     <p>{forecastData.hourly[12].weather[0].description}</p>
                   </div>
-                </div> */}
+                </div>
                 {/* <p className="text-white">{Math.round(forecastData.hourly[3].temp)}</p> */}
                 {/* <p>{forecastData.hourly[0].weather[0].description}</p> */}
             </div>
