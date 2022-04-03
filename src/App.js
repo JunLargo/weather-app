@@ -54,7 +54,7 @@ const App = () => {
       <h1 className="text-center text-white ">Welcome to weather app</h1>
         <input 
           type="text" 
-          className="bg-gray-100 mt-4 rounded-full border focus:outline-none focus:border-gray-200 w-80 px-3 py-1 placeholder:text-xs text-gray-900 text-xs drop-shadow-2xl" 
+          className="bg-gray-100 mt-4 rounded-full border focus:outline-none focus:border-gray-200 w-80 px-3 py-3 placeholder:text-xs text-gray-900 text-sm drop-shadow-2xl" 
           placeholder="Enter your city name here ..."
           onChange={e => setCity(e.target.value)}
           value={city}
@@ -69,13 +69,13 @@ const App = () => {
         ) : (
           <>
             <div className="mt-5 text-center" >
-              <h2 className="text-xs text-white font-normal justify-center">{weatherData.name}, {weatherData.sys.country}</h2>
+              <h2 className="text-base text-white font-normal justify-center">{weatherData.name}, {weatherData.sys.country}</h2>
               <div className="flex mt-1 justify-center">
-                <p className=" text-3xl text-white font-bold py-0">{Math.round(weatherData.main.temp)}<span className="align-top text-xs text-gray-100 font-normal">°c</span></p>
-                <img className="-mt-2 -ml-2" src={`https://openweathermap.org/img/wn/${weatherIcon}@2x.png `} alt={weatherData.weather[0].description} height="50" width="50" />
+                <p className=" text-6xl text-white font-bold py-0">{Math.round(weatherData.main.temp)}<span className="align-top text-xs text-gray-100 font-normal">°c</span></p>
+                <img className="-mt-2 -ml-2 text-base" src={`https://openweathermap.org/img/wn/${weatherIcon}@2x.png `} alt={weatherData.weather[0].description} height="50" width="50" />
               </div>
               <p className="-mt-1 capitalize text-white font-light">{weatherData.weather[0].description}</p>
-              <div className='flex justify-center text-gray-300 text-xs font-normal'>
+              <div className='flex justify-center text-gray-300 text-base font-normal'>
                 <p className='pr-1'>Sunrise: {Moment(timeConverter(weatherData.sys.sunrise)).format('LT')}</p>
                 <p className='pl-1'>Sunset: {Moment(timeConverter(weatherData.sys.sunset)).format('LT')}</p>
               </div>
